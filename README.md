@@ -13,12 +13,12 @@ The site is currently under active development with:
 - Progress tracking system
 - Modern UI with subtle animations
 
-**Live Preview:** [your-site-url.com](https://your-site-url.com)
+**Live Preview:** [djaguaruncaged.github.io](https://djaguaruncaged.github.io/)
 
 ## 🌟 Tech Stack
 
 ### Core Technologies
-- **Astro 5.11.1** - The modern static site generator for speed and flexibility
+- **Astro 5.11.10** - The modern static site generator for speed and flexibility
 - **Tailwind CSS 4.1.11** - Utility-first CSS framework with new 4.x features
 - **Modern CSS** - Utilizing bleeding-edge features like:
   - CSS View Transitions
@@ -31,9 +31,20 @@ The site is currently under active development with:
 - **Git** - Version control
 
 ## 🛠️ Project Structure
-src/
-├── pages/
-│ └── index.astro # Under construction page
-├── layouts/ # Layout components
-├── components/ # Reusable components
-└── styles/ # Global styles
+
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
