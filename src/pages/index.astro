@@ -1,11 +1,60 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import ConstructionLayout from '../layouts/ConstructionLayout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+
+const siteName = "My Blog and Porfolio";
+const contactEmail = "danj88888@gmail.com";
+const launchDate = "2025-07-30";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<ConstructionLayout title={`${siteName} - Coming Soon`}>
+	<div class="w-full max-w-lg bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 text-center space-y-6 border border-white/20">
+        <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+            {siteName} is Coming Soon
+        </h1>
+        
+        <p class="text-lg text-gray-700">
+            Crafting something extraordinary for you. Stay tuned for our launch!
+        </p>
+        
+        <!-- Modern spinner -->
+        <div class="inline-flex size-12 items-center justify-center">
+            <div class="size-10 animate-spin rounded-full border-[3px] border-b-transparent border-l-transparent border-blue-600"></div>
+        </div>
+        
+        <!-- Progress indicator -->
+        <div class="space-y-2">
+            <div class="text-sm text-gray-500/90 flex justify-between">
+                <span>Development Progress</span>
+                <span class="font-medium text-blue-600">5%</span>
+            </div>
+            <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div 
+                    class="h-full bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full animate-pulse" 
+                    style="width: 5%"
+                ></div>
+            </div>
+        </div>
+        
+        <!-- Contact with modern button -->
+        <div class="pt-4">
+            <a 
+                href={`mailto:${contactEmail}`} 
+                class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium transition-all rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md hover:shadow-lg hover:from-blue-700 hover:to-indigo-700"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                </svg>
+                Contact Us
+            </a>
+        </div>
+        
+        <!-- Countdown with subtle animation -->
+        <div class="text-sm text-gray-500/80 animate-fade-in">
+            Target launch: <time datetime={launchDate} class="font-medium text-gray-700">{new Date(launchDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+        </div>
+    </div>
+</ConstructionLayout>
