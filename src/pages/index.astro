@@ -3,6 +3,7 @@ import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import ConstructionLayout from '../layouts/ConstructionLayout.astro';
 import { Button } from '@/components/ui/button';
+import { Progress } from "@/components/ui/progress"
 
 
 
@@ -14,7 +15,7 @@ const launchDate = "2025-08-30";
 
 <ConstructionLayout title={`${siteName} - Coming Soon`}>
 	<div class="w-full max-w-lg bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 text-center space-y-6 border border-white/20">
-        <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+        <h1 class="text-4xl font-bold bg-gradient-to-r from-primary to-indigo-600 bg-clip-text text-transparent mb-4">
             {siteName} is Coming Soon
         </h1>
         
@@ -31,14 +32,12 @@ const launchDate = "2025-08-30";
         <div class="space-y-2">
             <div class="text-sm text-gray-500/90 flex justify-between">
                 <span>Development Progress</span>
-                <span class="font-medium text-blue-600">15%</span>
+                <span class="font-medium text-primary">15%</span>
             </div>
-            <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                <div 
-                    class="h-full bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full animate-pulse" 
-                    style="width: 5%"
-                ></div>
-            </div>
+            <Progress value={15} className="" />
+
+
+
         </div>
         
         <!-- Contact with modern button -->
